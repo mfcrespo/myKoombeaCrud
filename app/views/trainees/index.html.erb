@@ -1,0 +1,45 @@
+<div class="container">
+  <h1>List of Trainees</h1>
+  <%= link_to "Include Trainee", trainees_new_path %>
+</div>
+<br>
+<div class="container">
+  <table class="table table-responsive table-striped">
+    <tr>
+      
+      <thead>
+        <th>Name</th>
+        <th>Last Name</th>
+        <th>City</th>
+        <th>Country</th>
+        <th>Phone</th>
+        <th>Bio</th>
+        <th>Preference</th>
+        <th>Email</th>
+        <th>Github</th>
+        <th>Linkedin</th>
+        <th>Twitter</th>
+      </thead>
+    </tr>
+    <% @trainees.each do |trainee| %>
+    <tr>
+      <td><%= trainee.firstname %></td>
+      <td><%= trainee.lastname %></td>
+      <td><%= trainee.city %></td>
+      <td><%= trainee.country %></td>
+      <td><%= trainee.phone %></td>
+      <td><%= trainee.bio %></td>
+      <td><%= trainee.preference %></td>
+      <td><%= trainee.email %></td>
+      <td><%= trainee.github %></td>
+      <td><%= trainee.linkedin %></td>
+      <td><%= trainee.twitter %></td>
+      <td>
+        <%= link_to "Show", trainee_path(trainee) %>
+        <%= link_to "Edit", edit_trainee_path(trainee) %>
+        <%= link_to "Delete", trainee, method: :delete, data: { confirm: "Do you want to remove the trainee from the list?" } %>
+        </td>
+    </tr>
+    <% end %>
+  </table>
+</div>

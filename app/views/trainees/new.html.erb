@@ -1,0 +1,75 @@
+<div class="container">
+
+<h1>
+  <strong>Add Trainee To List</strong>
+</h1>
+<br>
+
+  <div class="form-group">
+
+    <%= form_for @trainee do |f| %>
+      <div class="row">
+        <div class="col">
+          <%= f.label :Firstname %>
+          <%= f.text_field :firstname, class: 'form-control' %>
+        </div>    
+        <div class="col">
+          <%= f.label :lastname %>
+          <%= f.text_field :lastname, class: 'form-control' %>
+        </div> 
+      </div>
+      <br>
+      <div class="row">
+        <div class="col">      
+          <%= f.label :city %>
+          <%= f.text_field :city, class: 'form-control' %>
+        </div>
+        <div class="col">
+          <%= f.label :country %>
+          <%= f.text_field :country, class: 'form-control' %>
+        </div>
+        <div class="col">
+          <%= f.label :phone %>
+          <%= f.number_field :phone, class: 'form-control' %>
+        </div>
+      </div>  
+      <br>
+      <div>
+        <%= f.label :bio %>
+        <%= f.text_area :bio, class: 'form-control' %>
+      </div>
+      <br>
+      <div>
+        <%= f.label :preference %>
+        <%= f.select :preference, Backend: 'Back-End', Frontend: 'Front-End', Mobile: 'Mobile' %>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col">
+          <%= f.label :email %>
+          <%= f.email_field :email, class: 'form-control' %>
+          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <div class="col">
+          <%= f.label :github %>
+          <%= f.text_field :github, class: 'form-control' %>
+        </div>
+        <div class="col">
+          <%= f.label :linkedin %>
+          <%= f.text_field :linkedin, class: 'form-control' %>
+        </div>
+        <div class="col">
+          <%= f.label :twitter %>
+          <%= f.text_field :twitter, class: 'form-control' %>
+        </div>
+      </div>  
+      <br>
+      <div>
+        <%= f.submit 'Save', :class => 'btn btn-info' %>
+        <%= f.submit 'Cancel', :action => :index, :class => 'btn btn-info' %>
+      </div>
+
+    <% end %>
+  </div>
+ 
+</div>    
